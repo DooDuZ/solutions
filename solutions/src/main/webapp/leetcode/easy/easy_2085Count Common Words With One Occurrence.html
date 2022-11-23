@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+	
+	
+	/*
+	Given two string arrays words1 and words2, 
+	두 문자열 배열 words1과 words2가 주어지면
+	return the number of strings that appear exactly once in each of the two arrays.
+	각각의 배열에 하나씩만 있는 문자의 수를 return.
+	
+	*/
+	
+	
+	
+	//test용 배열
+	let words1 = ["leetcode","is","amazing","as","is"];
+
+	let words2 = ["amazing","leetcode","is"];
+	
+	
+	/*
+	줄이기 도전...!
+	실패..!
+	같은 배열 내 중복값 체크 없음
+	
+	let answer2 = words1.filter( (value)=>( words2.includes(value) ) )
+	let count2 = answer2.length * 2;
+	for(let i of answer2){
+		for(let j of answer2){
+			if(i==j){
+				count2--;
+			}
+		}
+	}
+	
+	
+	console.log(count2);
+	*/
+	function easy2085(words1, words2) {
+	    let answer = [];
+	    
+	    for(let i of words1){
+	        let count = 0;
+	        for(let j of words1){
+	        	if(i==j){
+	        		count++;
+	        	}
+	        }
+	        if(count==1){
+	        	count=0;
+		        for(let j of words2){
+		            if(i==j){    	
+		                count++;
+		            }
+		        }
+	        }
+	        if(count==1){
+	            answer.push(i);
+	        }
+	    }
+	    console.log(answer);	// 제출시 return answer.length
+	};
+	
+	easy2085(words1, words2)
+	</script>
+
+
+</body>
+</html>

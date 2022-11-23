@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- js제출 불가 / java로 재작성 예정 -->
+
+	<script type="text/javascript">
+	
+	/*
+	 let answer = [];
+	 let arraySum = [];
+	 
+	 function checkSelfNumber(){
+		for(let i = 1; i<=10000; i++){
+			let num = `${i}`;		
+			let indexSum = Number(num);
+			for(let j = 0 ; j<num.length ; j++){
+				indexSum += Number(num[j]);
+			}
+			arraySum.push(indexSum);
+		}
+		
+		for(let i = 1 ; i<=10000 ; i++){
+			if(arraySum.indexOf(i)<0){
+				answer.push(i);
+			}
+		}
+		console.log(answer);
+	}
+	
+		checkSelfNumber();
+		
+		
+	*/
+	// 제출용 수정
+	
+	let Sums = [];
+	 
+	 function checkSelfNumber(){
+		for(let i = 1; i<=10000; i++){
+			let num = `${i}`;		
+			let indexSum = Number(num);
+			for(let j = 0 ; j<num.length ; j++){
+				indexSum += Number(num[j]);
+			}
+			Sums.push(indexSum);
+		}
+		
+		for(let i = 1 ; i<=10000 ; i++){
+			if(Sums.indexOf(i)<0){
+				console.log(i);
+			}
+		}
+	}
+	
+		checkSelfNumber();
+	
+	
+	</script>
+	
+</body>
+</html>

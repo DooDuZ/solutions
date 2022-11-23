@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+	
+	/*
+	
+	Given two integer arrays nums1 and nums2, return an array of their intersection.
+	주어진 두 정수배열 nums1과 nums2에서, 교차되는 값을 배열로 return 하시오.
+	Each element in the result must be unique and you may return the result in any order.
+	결과의 각 요소는 고유해야 하며[중복x], 순서는 상관 없습니다.	
+	
+	
+	1<= array.length <= 1000
+	
+	1<= array[i] <= 1000
+	
+	*/
+	
+	
+	// 1~1000 사이의 숫자를 가진 배열 만들기 [ 난수 사용 / 랜덤 ]
+	
+	let nums = [];
+	
+	
+	for(let i = 1 ; i<=2 ; i++){
+		let lengthOfArray = Math.floor(Math.random()*1000 + 1);
+		let numsElement = [];
+		for(let j = 1 ; j<=lengthOfArray ; j++){
+			let rand = Math.floor(Math.random()*1000 + 1);
+			if(numsElement.indexOf(rand)>=0){
+				j--;
+			}else{
+				numsElement.push(rand);
+			}
+		}
+		nums.push(numsElement);
+	}
+	
+	console.log(nums);
+	
+	// 두 배열[nums의 0번 인덱스와 1번 인덱스]의 중복 값 찾아 배열로 만들기
+	
+	
+	// solution 1 : filter / includes 사용
+	
+	let answer = nums[0].filter((value) => nums[1].includes(value));
+	
+	console.log(answer);
+	
+	// solution 2 : for문 사용
+	
+	let answer2 = [];
+	
+	for(let tmp of nums[0] ){
+		for(let tmp2 of nums[1]){
+			if(tmp==tmp2){
+				answer2.push(tmp);
+			}
+		}
+	}
+	console.log(answer2);
+	
+	
+	</script>
+
+
+</body>
+</html>

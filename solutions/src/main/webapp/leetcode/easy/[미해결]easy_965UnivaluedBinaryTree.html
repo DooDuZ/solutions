@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		/*
+			A binary tree is uni-valued if every node in the tree has the same value.
+			이진 트리의 모든 노드가 같은 값을 가진다면 단일 값이 됩니다.
+			Given the root of a binary tree, return true if the given tree is uni-valued, or false otherwise.
+			이진트리의 root가 주어지면 (root라는 이름의 배열로 주어지는듯 합니다.), 이진 트리의 모든 값이 같을 때 true를 return하고 아닌경우 false를 리턴하시오.
+		*/
+		
+		/*
+			Definition for a binary tree node.
+			function TreeNode(val, left, right) {
+			    this.val = (val===undefined ? 0 : val)
+			    this.left = (left===undefined ? null : left)
+			    this.right = (right===undefined ? null : right)
+			}
+		
+			@param {TreeNode} root
+ 			@return {boolean}
+			
+			var isUnivalTree = function(root) {
+			  ----> 이곳에 답을 작성하는 문제  
+			};
+			
+		 */
+		 let root = [1,1,1,1,1,null,1]
+			
+		 function isUnion(root) {
+		    for(let i = 0 ; i<root.length-1 ; i++){
+			    if(root[i]!=root[i+1] && root[i]!=null && root[i+1]!=null){
+			    	return false;		        	
+		    	}
+		 	}
+		    return true;
+		 }
+		    
+		 console.log(isUnion(root));
+		 
+		 // 사실 문제 이해를 제대로 못한거 같음니다... 트리 조건을 배열로 준다는 거 같은데 자세히 모르겠네요.
+	
+	</script>
+
+</body>
+</html>

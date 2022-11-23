@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<style type="text/css">
+	
+	
+	
+		*{margin : 0 ; padding : 0 ; box-sizing: border-box;}
+		.btn_box{text-align: center; margin : 20px;}
+		
+		#container{ background-color: #FFCC33; padding : 20px; margin : 0 auto; width : 400px;
+				position : relative; z-index: 1;
+		}
+		#board{border-collapse: collapse; margin : 0 auto; position: relative;}
+		img{ width : 13px; height : 13px;}
+		td{width: 19px; height : 19px;  border-collapse: collapse;
+			font-size : 12px; text-align: center; cursor: pointer;
+			position : relative;			
+		}
+		
+		td img{position : relative; z-index: 3;}
+
+		.inner::before{
+			content : '';
+			width : 1px;
+			height : 19px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			left : 9px;
+			bottom : 1px;
+		}
+		
+		.inner::after{
+			content : '';
+			width : 19px;
+			height : 1px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			bottom: 10px;
+		}
+	
+		.left_line::before{
+			content : '';
+			width : 1px;
+			height : 19px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			left : 9px;
+			bottom : 1px;			
+		}
+		.left_line::after{
+			content : '';
+			width : 10px;
+			height : 1px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			left : 9px;
+			bottom : 10px;			
+		}
+		.right_line::before{
+			content : '';
+			width : 1px;
+			height : 19px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			left : 9px;
+			bottom : 1px;			
+		}
+		.right_line::after{
+			content : '';
+			width : 10px;
+			height : 1px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			right : 9px;
+			bottom : 10px;			
+		}
+		.top_line::before{
+			content : '';
+			width : 1px;
+			height : 10px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			left : 9px;
+			bottom : 1px;			
+		}
+		.top_line::after{
+			content : '';
+			width : 19px;
+			height : 1px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			bottom : 10px;			
+		}
+		.btm_line::before{
+			content : '';
+			width : 1px;
+			height : 9px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			left : 9px;	
+			bottom : 11px;
+		}
+		.btm_line::after{
+			content : '';
+			width : 19px;
+			height : 1px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			bottom : 10px;			
+		}
+		.left_top::before{
+			content : '';
+			width : 1px;
+			height : 10px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			left : 9px;	
+			bottom : 1px;
+		}
+		.left_top::after{
+			content : '';
+			width : 10px;
+			height : 1px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			bottom : 10px;	
+			left : 10px;		
+		}
+		.left_btm::before{
+			content : '';
+			width : 1px;
+			height : 10px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			left : 9px;	
+			bottom : 10px;
+		}
+		.left_btm::after{
+			content : '';
+			width : 10px;
+			height : 1px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			bottom : 10px;	
+			left : 10px;		
+		}
+		.right_top::before{
+			content : '';
+			width : 1px;
+			height : 9px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			left : 9px;	
+			bottom : 1px;
+		}
+		.right_top::after{
+			content : '';
+			width : 10px;
+			height : 1px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			bottom : 10px;			
+		}		
+		.right_btm::before{
+			content : '';
+			width : 1px;
+			height : 9px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			left : 9px;	
+			bottom : 11px;
+		}
+		.right_btm::after{
+			content : '';
+			width : 10px;
+			height : 1px;
+			background-color: black;
+			display : block;
+			position : absolute;
+			bottom : 10px;			
+		}
+		
+	
+	
+	</style>
+	
+</head>
+<body>
+	
+	<div class="btn_box">
+		<button onclick="start_game()">게임 재시작</button>
+	</div>
+	
+	<div id="container">
+		<table id="board"></table>		
+	</div>
+	
+	<script src="board_test.js"></script>
+	
+</body>
+</html>

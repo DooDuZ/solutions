@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		/*
+			파스칼 삼각형 문제
+			https://leetcode.com/problems/pascals-triangle/
+			링크 들어가서 이미지 참조하시는 걸 권장합니다.
+			
+			Given an integer numRows, return the first numRows of Pascal's triangle.
+			정수배열 numRows가 주어지면, 파스칼 삼각형의 첫번째 줄을 리턴하시오.
+			In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
+			파스칼 삼각형에서, 각 숫자는 바로 위 두 수의 합입니다. (it as shown -> 이미지 보라는 얘기. 상단 링크로 보세요!!!)
+						
+			@param {number} numRows
+			@return {number[][]}
+			var generate = function(numRows) {
+			    // 여기에 코드 작성
+			};
+			
+			--> 문제가 좀 이상할 수 있는데
+			예를들어 Input: numRows = 5 이면
+			파스칼 삼각형의 모든 행을 순서대로 배열로 뽑으라는 말인거 같습니다.
+			결론은
+			링크 꼭 보세여!!!			
+		*/
+		let numRows = 5;
+		
+		function generate(numRows){
+			let answer = [];
+			
+			for(let i = 1; i<=numRows ; i++){
+				let rows = [];
+				console.log(i);
+				for(let j = 1; j<=i ; j++){
+					if(i==1){
+						rows.push(1);
+						continue;
+					}
+					if(j==1 || j==i){
+						rows.push(1);
+					}else{
+						rows.push(answer[i-2][j-2]+answer[i-2][j-1]);
+						console.log("test"+answer[i-2][j-2]);
+						console.log("test"+answer[i-2][j-1]);
+					}					
+				}
+				answer.push(rows)
+			}			
+			return answer;
+		}
+		console.log(generate(numRows))
+	
+	
+	</script>
+
+</body>
+</html>

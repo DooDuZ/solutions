@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- js제출 불가 / java로 재작성 예정 
+	이상태로 내면 메모리 효율성에서 탈락
+-->
+
+
+	<script type="text/javascript">
+	
+	/*
+	JAVA가 훨씬 짧네유~~
+	
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		test2 tst = new test2();
+		System.out.println(tst.checker(input.nextInt()));
+	}	
+	int checker(int n) {
+		int count = 0;
+		for(int i = 1 ; i<= n ; i++) {
+			if(i<100) {
+				count++;
+			}else if(i>=100 || i<1000) {
+				int a = i/100;
+				int b = (i-(a*100))/10;
+				int c = i-(a*100)-(b*10);
+				if(a-b == b-c) {
+					count++;
+				}
+			}else if(i==1000) {
+				continue;
+			}
+		}
+		return count;	
+	}
+	
+	*/
+	
+		let Num = prompt('숫자');
+		let answer = [];
+		
+		
+		function checkNum (Num){
+			if(Number(Num)>1000 || Number(Num)<1){
+				alert('1~1000사이의 숫자를 입력해주세요.')
+				return;
+			}
+			
+			for(let i = 1 ; i<=Number(Num) ; i++){
+				
+				let checkNum = false;
+				let tostring = `${i}`;				
+				if(tostring.length<=2){
+					checkNum = true;
+				}else{
+					let storage = [];					
+					for(let j = 0 ; j<tostring.length-1 ; j++){						
+						storage.push(Number(tostring[j]) - Number(tostring[j+1]));												
+					}
+					let count = 0;
+					for(let j = 0 ; j< storage.length ; j++){
+						if(storage[0]==storage[j]){
+							count++;
+						}
+					}
+					if(count==storage.length){
+						checkNum=true;
+					}
+				}				
+				if(checkNum){
+					answer.push(i);
+				}
+			}
+			console.log(answer.length);
+		}		
+		checkNum ();
+	
+	
+	</script>
+
+
+</body>
+</html>

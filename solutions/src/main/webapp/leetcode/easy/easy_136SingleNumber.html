@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+	<script type="text/javascript">
+	
+	
+	/*
+	Given a non-empty array of integers nums, every element appears twice except for one. 
+	하나를 제외한 모든 element가 두번씩 반복되는, 비어있지 않은 정수 배열에서 
+	Find that single one.
+	하나인 값을 찾아라.
+	*/
+	
+	
+	let nums =[10,10,9];
+	
+	function checknum( nums ) {
+	    for(let i = 0 ; i<nums.length ; i++){
+	        let count = 0;
+	        for(let j = 0 ; j<nums.length ; j++){
+	            if(nums[i]==nums[j]){
+	                count++;
+	            }
+	        }
+	        if(count==1){
+	            return nums[i];
+	        }
+	    }
+	}
+	checknum( nums );
+	
+	
+	//test
+	
+	function checknum2(nums) {
+	    for(let i of nums){
+	        let count = 0;
+	        for(let j of nums){
+	            if(i==j){
+	            	console.log("ivsj"+ i +""+j);
+	                count++;
+	                console.log(count)
+	            }
+	        }
+	        if(count==1){
+	            return i;
+	        }
+	    }	    
+	}
+	checknum2(nums);
+	
+	</script>
+
+
+
+</body>
+</html>

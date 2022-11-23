@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<!-- 
+
+	You are given row x col grid representing a map where grid[i][j] = 1 represents land and grid[i][j] = 0 represents water.
+	grid[i][j] = 1은 땅을 나타내고 grid[i][j] = 0은 물을 나타내는 지도를 나타내는 행 x col 그리드가 제공됩니다.
+	
+	Grid cells are connected horizontally/vertically (not diagonally). 
+	그리드 셀은 대각선이 아닌 수평/수직으로 연결됩니다.	
+	
+	The grid is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells).
+	그리드는 물로 완전히 둘러싸여 있고, 정확히 하나의 섬(즉, 하나 이상의 연결된 육지 셀)이 있다.  -- 이미지 참고
+	
+	The island doesn't have "lakes", meaning the water inside isn't connected to the water around the island. 
+	섬에는 호수가 없습니다 -- 섬 내의 물이 섬 밖의 물과 연결되지 않는다는 의미입니다. 라는데 걍 육지 안에는 물이 없답니다.
+	One cell is a square with side length 1. The grid is rectangular, width and height don't exceed 100. Determine the perimeter of the island.
+	하나의 셀은 변 길이가 1인 정사각형입니다. 격자는 직사각형이고 폭과 높이는 100을 넘지 않습니다. 섬의 둘레를 결정합니다. -> 신경쓰지말고 걍 하십쇼
+	
+	결론은 섬 둘레 return하는 함수 만들기!
+	
+	아래 식은 답을 출력해 주지만, 제출 시엔 함수에 맞게 사용하지 않는 console은 지우고 return을 추가하는 것 같은 기본적인 수정은 해줘야합니다.
+	
+ -->
+ <div>
+ 	<img src="img/463IMG.JPG">
+ </div>
+ 
+ 	<script type="text/javascript">
+	
+		let grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]];
+		// 예시 배열
+	
+		let count = 0;
+	    
+	    for(let i = 0 ; i<grid.length ; i++){
+	        for(let j = 0 ; j<grid[i].length ; j++){
+	            if(grid[i][j]==1){
+	            	count += 4;
+	            	console.log("셀 진입" + count)
+	            	if(i+1<grid.length && grid[i+1][j]==1){
+		                count--;
+		                console.log(i+""+j+""+"위로 한칸" + count)
+		            }
+		            if(i-1>=0 && grid[i-1][j]==1){
+		                count--;
+		                console.log(i+""+j+""+"아래 한칸" + count)
+		            }
+		            if(j+1<grid[i].length && grid[i][j+1]==1){
+		                count--;
+		                console.log(i+""+j+""+"오른쪽 한칸" + count)
+		            }
+		            if(j-1>=0 && grid[i][j-1]==1){
+		                count--;
+		                console.log(i+""+j+""+"왼쪽 한칸" + count)
+		            }
+	            }
+	        }
+	    }
+		
+	    console.log(count)
+	
+	</script>
+
+</body>
+</html>

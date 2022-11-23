@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="lotto.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="btn_box"></div>
+		<div class="print_box">
+			<div class="select_numb"></div>
+			<button onclick="select_complete()">선택 완료</button>
+			
+			<div class="completed"></div>
+			
+			<h3>당첨 번호</h3>
+			<div class="winning_numb"></div>
+			<button onclick="draw_numb()">번호추첨</button>
+			
+			<h3>일치 번호</h3>
+			<div class="united_numb"></div>
+			
+			<h3>회차별 등수</h3>
+			<div class="ranking"></div>
+					
+		</div>
+	</div>
+	
+	
+
+
+	<script src="lotto.js"></script>
+</body>
+</html>

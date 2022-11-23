@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<!-- 백준은 자바로 풉니다. JS는 가끔씩만 올려요 -->
+
+	<script type="text/javascript">
+	
+	let x = Number(prompt('숫자'));
+	let i = 0;
+	let sum = 0;
+
+	let 가변길이;
+	
+	
+	while(true){
+		i++;
+		sum+=i;
+		if(sum>=x){
+			시작분모 = i;
+			가변길이 = x-(sum-i)-1;
+			console.log("시작분모 : " + i);
+			console.log("가변길이" + 가변길이);
+			break;
+		}
+	}
+	
+	let answer1 = 1+가변길이;
+	let answer2 = i-가변길이;
+	
+	if(i%2==1){
+		console.log(answer2 + "/" + answer1);
+	}else{		
+		console.log(answer1 + "/" + answer2);
+	}
+	
+	
+	
+	</script>
+
+
+</body>
+</html>

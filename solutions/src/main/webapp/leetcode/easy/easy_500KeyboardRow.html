@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		/*
+			Given an array of strings words, return the words that 
+			문자열 배열이 주어지면, 하단에 기재된 조건의 단어를 리턴하세요.
+			can be typed using letters of the alphabet on only one row of American keyboard like the image below.
+			리턴할 단어는 하단 이미지[걍 본인 키보드 알파벳만 보시면 됩니다~] 영어 키보드에서 한 행[가로 한 줄]만 이용해서 칠 수 있는 단어입니다.
+			
+			the first row consists of the characters "qwertyuiop",
+			the second row consists of the characters "asdfghjkl", and
+			the third row consists of the characters "zxcvbnm"
+			
+			@param {string[]} words
+			@return {string[]}
+			
+			var findWords = function(words) {
+			    // 여기에 코드 작성
+			};
+		*/
+		function findWords(words){
+			let firstRow = ['q','w','e','r','t','y','u','i','o','p','Q','W','E','R','T','Y','U','I','O','P'];
+			let secondRow = ['a','s','d','f','g','h','j','k','l','A','S','D','F','G','H','J','K','L'];
+			let thirdRow = ['z','x','c','v','b','n','m','Z','X','C','V','B','N','M'];
+			
+			let rowLetter = [];
+			for(let i = 0 ; i<words.length ; i++){
+				let count = 0;
+				for(let j = 0 ; j<words[i].length ; j++){
+					for(let k = 0 ; k<firstRow.length ; k++){
+						if(words[i][j]==firstRow[k]){
+							count++;
+							break;
+						}
+					}
+				}
+				if(count==words[i].length){
+					rowLetter.push(words[i]);
+					continue;
+				}else{
+					count = 0;
+				}
+				
+				for(let j = 0 ; j<words[i].length ; j++){
+					for(let k = 0 ; k<secondRow.length ; k++){
+						if(words[i][j]==secondRow[k]){
+							count++;
+							break;
+						}
+					}
+				}
+				if(count==words[i].length){
+					rowLetter.push(words[i]);
+					continue;
+				}else{
+					count = 0;
+				}
+				
+				for(let j = 0 ; j<words[i].length ; j++){
+					for(let k = 0 ; k<thirdRow.length ; k++){
+						if(words[i][j]==thirdRow[k]){
+							count++;
+							break;
+						}
+					}
+				}
+				if(count==words[i].length){
+					rowLetter.push(words[i]);
+					continue;
+				}else{
+					count = 0;
+				}
+			}
+			console.log(rowLetter);
+			return rowLetter;
+		}
+		findWords(words)
+		
+	
+	
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+
+
+.container{ width : 900px; margin : 0 auto;
+	display : flex; justify-content: space-around;}
+
+.btn_box { width : 300px; border : 5px double #f67a7a; }
+.btn_box button{font-size: 20px;
+    width: 50px;
+    height: 50px;
+    margin : 5px;
+    /* padding: 5px; */
+    background-color: white;
+    color: #f67a7a;
+    /* text-align: center; */
+    cursor: pointer;
+    border-style: none;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    float : left;
+}
+
+.completed{cursor:pointer;}
+

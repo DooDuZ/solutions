@@ -1,1 +1,1 @@
-# solutions
+# 문제풀이용 repository
